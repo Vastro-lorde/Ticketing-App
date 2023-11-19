@@ -70,17 +70,17 @@ const TicketForm = ({ editMode = false, updateTicket = null}) => {
         <div className=' flex justify-center'>
             <form className=' flex flex-col lg:w-1/3 w-3/4 gap-3' method='POST' onSubmit={handleSubmit}>
                 <h3 className=' text-slate-100 text-center'>Create Ticket</h3>
-                <input type="text" id='title' placeholder='Title' onChange={handleChange} value={ticket.title} required />
-                <textarea type="text" id='description' placeholder='Description' onChange={handleChange} value={ticket.description} rows={3} required />
+                <input type="text" id='title' placeholder='Title' onChange={handleChange} value={ticket?.title} required />
+                <textarea type="text" id='description' placeholder='Description' onChange={handleChange} value={ticket?.description} rows={3} required />
                 <label className=' text-slate-300' htmlFor='category'>Category</label>
-                <select id='category' onChange={handleChange} value={ticket.category} required>
+                <select id='category' onChange={handleChange} value={ticket?.category} required>
                     <option value="Hardware Problem">Hardware Problem</option>
                     <option value="Software Problem">Software Problem</option>
                     <option value="Hardware Problem">Hardware Problem</option>
                     <option value="Other">Other</option>
                 </select>
                 <label className=' text-slate-300' htmlFor='priority'>Priority</label>
-                <select id='priority' onChange={handleChange} value={ticket.priority} required>
+                <select id='priority' onChange={handleChange} value={ticket?.priority} required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -88,10 +88,10 @@ const TicketForm = ({ editMode = false, updateTicket = null}) => {
                     <option value="5">5</option>
                 </select>
                 <label className=' text-slate-300' htmlFor='progress'>Progress <span className=' bg-card rounded p-1' style={{color: ticket.progress > 50 ? 'green' : 'red'}}>{ticket.progress}</span></label>
-                <input type="range" id='progress' onChange={handleChange} value={ticket.progress} min="0" max="100" step={10} required />
+                <input type="range" id='progress' onChange={handleChange} value={ticket?.progress} min="0" max="100" step={10} required />
 
                 <label className=' text-slate-300' htmlFor='status'>Status</label>
-                <select id='status' onChange={handleChange} value={ticket.status} required>
+                <select id='status' onChange={handleChange} value={ticket?.status} required>
                     <option value="open">Open</option>
                     <option value="in-progress">In Progress</option>
                     <option value="closed">Closed</option>

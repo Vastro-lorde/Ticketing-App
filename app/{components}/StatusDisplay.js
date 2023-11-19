@@ -7,7 +7,7 @@ const StatusDisplay = ({ status }) => {
         'closed': 'bg-green-500',
     }
     return (
-        <span className={`${statusColors[status.toLowerCase()]} inline-block rounded-full px-2 whitespace-nowrap py-1 text-xs font-semibold text-slate-300`} >
+        <span className={`${statusColors[status?.toLowerCase()]} inline-block rounded-full px-2 whitespace-nowrap py-1 text-xs font-semibold text-slate-300`} >
             {status}
         </span>
     )
