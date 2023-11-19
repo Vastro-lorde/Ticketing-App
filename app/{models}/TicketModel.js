@@ -1,12 +1,7 @@
 import mongoose, { Schema } from "mongoose";
+import mongodb from "./db";
 
-mongoose.connect(process.env.MONGODB_URL,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-
-mongoose.Promise = global.Promise;
+mongodb()
 
 const ticketModel = new Schema({
     title : {
