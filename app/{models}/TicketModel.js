@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import mongodb from "./db";
 
-mongodb()
+await mongodb()
 
 const ticketModel = new Schema({
     title : {

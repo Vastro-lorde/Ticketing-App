@@ -4,13 +4,14 @@ import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { baseUrl } from "../{models}/constants"
 
 const DeleteTicket =  ({ id }) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const router = useRouter();
 
   const deleteThisTicket = async () => {
-    const res = await fetch(`/api/tickets/${id}`, {
+    const res = await fetch(baseUrl +`/api/tickets/${id}`, {
       method: 'DELETE'
     })
     if (res.ok) {

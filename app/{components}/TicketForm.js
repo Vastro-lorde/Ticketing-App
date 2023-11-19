@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import React, { useState} from 'react'
+import { baseUrl } from '../{models}/constants';
 
 const TicketForm = ({ editMode = false, updateTicket = null}) => {
     const router = useRouter();
@@ -26,7 +27,7 @@ const TicketForm = ({ editMode = false, updateTicket = null}) => {
         event.preventDefault();
         if (editMode) {
             console.log('updating ticket');
-            fetch(`/api/tickets/${updateTicket._id}`, {
+            fetch(baseUrl +`/api/tickets/${updateTicket._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +48,7 @@ const TicketForm = ({ editMode = false, updateTicket = null}) => {
             const newTicket = {
                 ...ticket
             }
-            fetch('/api/tickets', {
+            fetch(baseUrl +'/api/tickets', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,7 +1,8 @@
 import TicketForm from "@/app/{components}/TicketForm";
+import { baseUrl } from "@/app/{models}/constants";
 
 const getTicket = async (id) => {
-    const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
+    const res = await fetch(baseUrl +`/api/tickets/${id}`, {
         cache: 'no-store'
     });
     if (!res.ok) {

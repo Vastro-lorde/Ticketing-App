@@ -1,9 +1,10 @@
 
 import TicketCard from './{components}/TicketCard'
+import { baseUrl } from './{models}/constants';
 
 const getTickets = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/tickets', {
+    const res = await fetch(baseUrl +'/api/tickets', {
       cache: 'no-store'
     })
     const data = await res.json();
