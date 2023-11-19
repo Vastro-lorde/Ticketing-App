@@ -1,4 +1,4 @@
-import TicketForm from "@/app/{components}/TicketForm"
+import TicketForm from "@/app/{components}/TicketForm";
 
 const getTicket = async (id) => {
     const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
@@ -8,7 +8,7 @@ const getTicket = async (id) => {
         throw new Error('Failed to fetch data');
     }
     const data = await res.json()
-    return data
+    return data;
 }
 
 const TicketPage = async ({params}) => {

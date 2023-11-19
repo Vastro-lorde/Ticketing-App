@@ -14,13 +14,14 @@ const getTickets = async () => {
 }
 
 export default async function Home() {
-  const { tickets } = await getTickets();
-  const uniqueCategories = [...new Set(tickets.map((ticket) => ticket.category))];
+  const result = await getTickets();
+  const tickets = result?.tickets;
+  const uniqueCategories = [...new Set(tickets?.map((ticket) => ticket.category))];
   return (
     <div className=' p-5'>
       <div>
         <p>Total Tickets: {tickets.length}</p>
-        {tickets && uniqueCategories.map((category, index) => (
+        {tickets && uniqueCategories?.map((category, index) => (
           <div key={index}>
             <p className=' m-2'><span  className=' bg-card cursor-pointer inline-block rounded-full px-2 py-1 text-xs font-semibold text-slate-300'>{category}</span>
            </p>

@@ -21,7 +21,7 @@ const TicketCard = ({ ticket }) => {
                 <div className=" flex-grow"></div>
                 <div className=" flex mt-2 ">
                     <div className=" flex flex-col">
-                        <p className=" text-sm my-1">{ new Date(ticket.createdAt).toUTCString()}</p>
+                        <p className=" text-xs my-1">{ new Date(ticket.createdAt).toUTCString()}</p>
                         <ProgressDisplay progress={ticket.progress}/>
                     </div>
                     <div className=" ml-auto flex items-end">
