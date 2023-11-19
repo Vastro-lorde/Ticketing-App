@@ -1,7 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import mongodb from "./db";
 
-await mongodb()
+mongoose.connect(process.env.MONGODB_URL);
+
+mongoose.Promise = global.Promise;
 
 const ticketModel = new Schema({
     title : {
@@ -40,6 +41,6 @@ const ticketModel = new Schema({
     timestamps: true
 });
 
-const Ticket = mongoose.models.Ticket || mongoose.model("Ticket", ticketModel);
+const Ticket = mongoose.models?.Ticket || mongoose.model("Ticket", ticketModel);
 
 export default Ticket;
