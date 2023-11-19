@@ -23,10 +23,10 @@ export default async function Home() {
       <div>
         <p>Total Tickets: {tickets?.length}</p>
         {tickets && uniqueCategories?.map((category, index) => (
-          <div key={index}>
-            <p className=' m-2'><span  className=' bg-card cursor-pointer inline-block rounded-full px-2 py-1 text-xs font-semibold text-slate-300'>{category}</span>
+          <div key={index} className=' mb-5'>
+            <p className=' mt-2 mx-2 mb-1'><span  className=' bg-card cursor-pointer inline-block rounded-full px-2 py-1 text-xs font-semibold text-slate-300'>{category}</span>
            </p>
-           <div className=' lg:grid grid-cols-3 xl:grid-cols-4'>
+           <div className=' lg:grid grid-cols-3 xl:grid-cols-4 border border-card rounded-lg'>
               {tickets?.filter((ticket) => ticket.category === category)?.map((uniqueTicket, index) => (
                 <TicketCard key={index} ticket={uniqueTicket} />
               ))}

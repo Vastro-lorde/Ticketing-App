@@ -5,8 +5,8 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <nav className=' flex justify-between bg-nav'>
-        <div>
+    <nav className=' flex justify-between bg-nav px-4 py-2'>
+        <div className=' flex justify-between p-1 w-16'>
             <Link href={'/'}>
                 <FontAwesomeIcon icon={faHome} className='icon'/>
             </Link>
