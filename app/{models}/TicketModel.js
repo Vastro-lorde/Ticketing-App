@@ -1,6 +1,10 @@
 import mongoose, { Schema } from "mongoose";
 
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGODB_URL,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
 mongoose.Promise = global.Promise;
 
